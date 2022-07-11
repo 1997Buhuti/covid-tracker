@@ -1,0 +1,11 @@
+.row {
+  .card {
+    text-align: center;
+    border: 0;
+    box-shadow: 1px 5px 10px;
+    .fa {
+      font-size: 32px;
+    }
+    cursor: pointer;
+  }
+}

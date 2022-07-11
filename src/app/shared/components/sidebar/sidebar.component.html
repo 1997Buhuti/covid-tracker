@@ -1,20 +1,23 @@
 <nav class="sideBar">
   <div class="logo">
-    <a href="#">
+    <a [routerLink]="'summary'">
       <img src="../../../../assets/images/side_bar_image.png" alt="logo" />
     </a>
-    <h3>Covid Tracker App</h3>
+    <h3>
+      Mana's <br />
+      Covid Tracker App
+    </h3>
   </div>
   <div class="navigation">
     <ul>
-      <li>
-        <a href="#"> Summary </a>
+      <li routerLinkActive="active">
+        <a [routerLink]="'summary'"> Summary </a>
       </li>
-      <li>
-        <a href="#"> By Country </a>
+      <li routerLinkActive="active">
+        <a [routerLink]="'country'"> By Country </a>
       </li>
-      <li>
-        <a href="#"> Live Data </a>
+      <li routerLinkActive="active">
+        <a [routerLink]="'live'"> Live Data </a>
       </li>
     </ul>
   </div>
