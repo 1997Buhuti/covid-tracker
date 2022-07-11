@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -11,7 +12,7 @@ import { SummaryModule } from './summary/summary.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, SummaryModule, CountryModule, LiveModule],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, SummaryModule, CountryModule, LiveModule, RouterModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
