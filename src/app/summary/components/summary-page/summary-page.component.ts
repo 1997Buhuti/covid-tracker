@@ -8,6 +8,7 @@ import { DataService } from 'src/app/shared/services/data.service';
 })
 export class SummaryPageComponent implements OnInit {
   covidData = {};
+  searchedCountry: string = '';
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
@@ -15,5 +16,11 @@ export class SummaryPageComponent implements OnInit {
       this.covidData = data;
       console.log(this.covidData);
     });
+  }
+
+  searchCountry(country: string) {
+    this.searchedCountry = country;
+    console.log('Hi from confirmed Summary pag');
+    console.log(this.searchedCountry);
   }
 }
