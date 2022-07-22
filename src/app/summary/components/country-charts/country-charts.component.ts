@@ -6,6 +6,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import { response } from 'express';
 import { Label } from 'ng2-charts';
 import { DataService } from 'src/app/shared/services/data.service';
 
@@ -18,11 +19,12 @@ export class CountryChartsComponent implements OnInit, OnChanges {
   @Input() country: string = 'USA';
   barChartData: ChartDataSets[] = [
     {
-      data: [65, 59, 80],
+      data: [],
+      label: 'Confirmed Cases',
     },
   ];
 
-  barChartLabels: Label[] = ['USA', 'UK', 'Brazil'];
+  barChartLabels: Label[] = [];
   barChartOptions: ChartOptions = {
     responsive: true,
   };
@@ -31,7 +33,7 @@ export class CountryChartsComponent implements OnInit, OnChanges {
   barChartPlugins = [];
   constructor(private dataService: DataService) {}
   ngOnChanges(): void {
-    console.log(this.country);
+    this.getCountryData();
   }
 
   ngOnInit(): void {}
@@ -44,6 +46,10 @@ export class CountryChartsComponent implements OnInit, OnChanges {
       )
       .subscribe((res: any) => {
         console.log('Response', res);
+        this.barChartData[0].data = res.map((obj: any) => obj['Cases']);
+        this.barChartLabels = res.map((obj: any) =>
+          obj['Date'].substring(0, 10),
+        );
       });
   }
 }

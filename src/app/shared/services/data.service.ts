@@ -13,6 +13,8 @@ export class DataService {
   }
 
   getCountryDataByDate(country: string, date: string) {
-    return this.http.get(`${this.apiUrl}/${country}/status/confirmed?${date}`);
+    return this.http.get(
+      `${this.apiUrl}/country/${country}/status/confirmed?from=${date}`,
+    );
   }
 }
