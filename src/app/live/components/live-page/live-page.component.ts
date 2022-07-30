@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts/highmaps';
 import * as worldMap from '@highcharts/map-collection/custom/world.geo.json';
+import { DataService } from 'src/app/shared/services/data.service';
 @Component({
   selector: 'app-live-page',
   templateUrl: './live-page.component.html',
   styleUrls: ['./live-page.component.scss'],
 })
 export class LivePageComponent implements OnInit {
-  constructor() {}
+  liveData: any = [];
+  constructor(private dataService: DataService) {}
 
   HighCharts: typeof Highcharts = Highcharts;
   chartConstructor = 'mapChart';
@@ -48,9 +50,37 @@ export class LivePageComponent implements OnInit {
           format: '{point.name}',
         },
         allAreas: false,
-        data: [],
+        data: [
+          ['fo', 0],
+          ['us', 1],
+          ['jp', 2],
+          ['sc', 3],
+          ['fr', 4],
+          ['in', 5],
+          ['cn', 6],
+          ['pt', 7],
+          ['ph', 8],
+          ['mx', 9],
+          ['mv', 10],
+        ],
       },
     ],
   };
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dataService.getSummaryData().subscribe(
+      (data: any) => {
+        this.liveData = data.Countries.map((country: any) => [
+          country.CountryCode.toLowerCase(),
+          country.TotalConfirmed,
+        ]);
+        // @ts-ignore
+        this.chartOptions?.series[0]?.data = this.liveData;
+        //Rerendering HighCharts Map
+        this.HighCharts.mapChart('container', this.chartOptions);
+      },
+      (error: any) => {
+        console.log(error);
+      },
+    );
+  }
 }
