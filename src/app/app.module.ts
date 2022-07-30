@@ -9,10 +9,21 @@ import { CountryModule } from './country/country.module';
 import { LiveModule } from './live/live.module';
 import { SharedModule } from './shared/shared.module';
 import { SummaryModule } from './summary/summary.module';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, SummaryModule, CountryModule, LiveModule, RouterModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    SummaryModule,
+    CountryModule,
+    LiveModule,
+    RouterModule,
+    HttpClientModule,
+    NgbModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
