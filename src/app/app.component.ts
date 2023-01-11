@@ -9,4 +9,6 @@ export class AppComponent {
   title = 'covid-tracker';
   //Teeny Tiny comment
   //Another wee comment
+  //comment 01
+  //Comment 03
 }
