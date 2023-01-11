@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'covid-tracker';
   //Teeny Tiny comment
+  //Another wee comment
 }
