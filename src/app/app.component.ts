@@ -18,4 +18,6 @@ export class AppComponent {
   //Another  comment This only a test A hole.
   //ANother one
   // Added another change
+  //some wee changers4
+  //anorther chsnege
 }
