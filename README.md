@@ -1,6 +1,6 @@
 # CovidTracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0. To track the current trends and latest updates on Covid-19 around the globe
 
 ## Development server
 
