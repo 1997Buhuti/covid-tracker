@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'covid-tracker';
+
+  //Diske diskadi
   //Teeny Tiny comment
   //Another wee comment
   //comment 01
@@ -18,4 +20,6 @@ export class AppComponent {
   //Another  comment This only a test A hole.
   //ANother one
   // Added another change
+
+  //Bullshit
 }
